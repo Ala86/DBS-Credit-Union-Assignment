@@ -1,0 +1,35 @@
+OOP Things to do:
+
+1: Ensure account numbers are unique 
+(
+SELECT AccountId from
+)
+
+2: Overdraft default to zero on new accounts
+
+3: Update stored procedures to withdraw all fields from customer and Account tables(fully populate account/person object) - DONE
+
+4: Validation of EVERYTHING, Regular expressions for email, no blankspaces etc
+
+
+6: Transfer funds for outside accounts
+
+7: Edit account details of a user -- similar sql procedure to spUpdateBalance
+
+8: think about structure/encapsulation/polymorphism, how can we reduce amount of code,
+organise things better
+
+(Presentation layer methods class, im reusing a lot of code in withdrawal, lodgement etc, RegEx)
+
+
+9: start commenting code
+
+
+Error:
+
+An unhandled exception of type 'System.Data.SqlClient.SqlException' occurred in System.Data.dll
+
+Additional information: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__tblTransf__Credi__09746778". The conflict occurred in database "10186146", table "dbo.tblTransaction", column 'TransactionId'.
+
+
+

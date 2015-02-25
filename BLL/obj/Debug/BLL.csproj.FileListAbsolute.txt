@@ -1,0 +1,77 @@
+C:\Users\10186146\Downloads\AssignmentWeek1-2015-02-13\AssignmentWeek1\BLL\bin\Debug\BLL.dll
+C:\Users\10186146\Downloads\AssignmentWeek1-2015-02-13\AssignmentWeek1\BLL\bin\Debug\BLL.pdb
+C:\Users\10186146\Downloads\AssignmentWeek1-2015-02-13\AssignmentWeek1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\10186146\Downloads\AssignmentWeek1-2015-02-13\AssignmentWeek1\BLL\obj\Debug\BLL.dll
+C:\Users\10186146\Downloads\AssignmentWeek1-2015-02-13\AssignmentWeek1\BLL\obj\Debug\BLL.pdb
+C:\Users\10186146\Downloads\AssignmentWeek1-2015-02-13\AssignmentWeek1\BLL\bin\Debug\DAL.dll
+C:\Users\10186146\Downloads\AssignmentWeek1-2015-02-13\AssignmentWeek1\BLL\bin\Debug\DAL.pdb
+C:\Users\10186146\Downloads\130215Kevin\BLL\bin\Debug\BLL.dll
+C:\Users\10186146\Downloads\130215Kevin\BLL\bin\Debug\BLL.pdb
+C:\Users\10186146\Downloads\130215Kevin\BLL\bin\Debug\DAL.dll
+C:\Users\10186146\Downloads\130215Kevin\BLL\bin\Debug\DAL.pdb
+C:\Users\10186146\Downloads\130215Kevin\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\10186146\Downloads\130215Kevin\BLL\obj\Debug\BLL.dll
+C:\Users\10186146\Downloads\130215Kevin\BLL\obj\Debug\BLL.pdb
+C:\Users\10186146\Downloads\140215Kevin\140215Kevin\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\10186146\Downloads\140215Kevin\140215Kevin\BLL\obj\Debug\BLL.dll
+C:\Users\10186146\Downloads\140215Kevin\140215Kevin\BLL\bin\Debug\BLL.dll
+C:\Users\10186146\Downloads\140215Kevin\140215Kevin\BLL\bin\Debug\BLL.pdb
+C:\Users\10186146\Downloads\140215Kevin\140215Kevin\BLL\bin\Debug\DAL.dll
+C:\Users\10186146\Downloads\140215Kevin\140215Kevin\BLL\bin\Debug\Model.dll
+C:\Users\10186146\Downloads\140215Kevin\140215Kevin\BLL\bin\Debug\DAL.pdb
+C:\Users\10186146\Downloads\140215Kevin\140215Kevin\BLL\bin\Debug\Model.pdb
+C:\Users\10186146\Downloads\140215Kevin\140215Kevin\BLL\obj\Debug\BLL.pdb
+C:\Users\10186146\Desktop\140215Kevin\BLL\bin\Debug\BLL.dll
+C:\Users\10186146\Desktop\140215Kevin\BLL\bin\Debug\BLL.pdb
+C:\Users\10186146\Desktop\140215Kevin\BLL\bin\Debug\DAL.dll
+C:\Users\10186146\Desktop\140215Kevin\BLL\bin\Debug\Model.dll
+C:\Users\10186146\Desktop\140215Kevin\BLL\bin\Debug\DAL.pdb
+C:\Users\10186146\Desktop\140215Kevin\BLL\bin\Debug\Model.pdb
+C:\Users\10186146\Desktop\140215Kevin\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\10186146\Desktop\140215Kevin\BLL\obj\Debug\BLL.dll
+C:\Users\10186146\Desktop\140215Kevin\BLL\obj\Debug\BLL.pdb
+C:\Users\10186146\Downloads\180215Simon\140215Kevin\BLL\bin\Debug\BLL.dll
+C:\Users\10186146\Downloads\180215Simon\140215Kevin\BLL\bin\Debug\BLL.pdb
+C:\Users\10186146\Downloads\180215Simon\140215Kevin\BLL\bin\Debug\DAL.dll
+C:\Users\10186146\Downloads\180215Simon\140215Kevin\BLL\bin\Debug\Model.dll
+C:\Users\10186146\Downloads\180215Simon\140215Kevin\BLL\bin\Debug\DAL.pdb
+C:\Users\10186146\Downloads\180215Simon\140215Kevin\BLL\bin\Debug\Model.pdb
+C:\Users\10186146\Downloads\180215Simon\140215Kevin\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\10186146\Downloads\180215Simon\140215Kevin\BLL\obj\Debug\BLL.dll
+C:\Users\10186146\Downloads\180215Simon\140215Kevin\BLL\obj\Debug\BLL.pdb
+C:\Users\10186146\Downloads\200215Kevin\200215Kevin\BLL\bin\Debug\BLL.dll
+C:\Users\10186146\Downloads\200215Kevin\200215Kevin\BLL\bin\Debug\BLL.pdb
+C:\Users\10186146\Downloads\200215Kevin\200215Kevin\BLL\bin\Debug\DAL.dll
+C:\Users\10186146\Downloads\200215Kevin\200215Kevin\BLL\bin\Debug\Model.dll
+C:\Users\10186146\Downloads\200215Kevin\200215Kevin\BLL\bin\Debug\DAL.pdb
+C:\Users\10186146\Downloads\200215Kevin\200215Kevin\BLL\bin\Debug\Model.pdb
+C:\Users\10186146\Downloads\200215Kevin\200215Kevin\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\10186146\Downloads\200215Kevin\200215Kevin\BLL\obj\Debug\BLL.dll
+C:\Users\10186146\Downloads\200215Kevin\200215Kevin\BLL\obj\Debug\BLL.pdb
+C:\Users\10186146\Downloads\220215Kevin (1)\220215Kevin\BLL\bin\Debug\BLL.dll
+C:\Users\10186146\Downloads\220215Kevin (1)\220215Kevin\BLL\bin\Debug\BLL.pdb
+C:\Users\10186146\Downloads\220215Kevin (1)\220215Kevin\BLL\bin\Debug\DAL.dll
+C:\Users\10186146\Downloads\220215Kevin (1)\220215Kevin\BLL\bin\Debug\Model.dll
+C:\Users\10186146\Downloads\220215Kevin (1)\220215Kevin\BLL\bin\Debug\DAL.pdb
+C:\Users\10186146\Downloads\220215Kevin (1)\220215Kevin\BLL\bin\Debug\Model.pdb
+C:\Users\10186146\Downloads\220215Kevin (1)\220215Kevin\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\10186146\Downloads\220215Kevin (1)\220215Kevin\BLL\obj\Debug\BLL.dll
+C:\Users\10186146\Downloads\220215Kevin (1)\220215Kevin\BLL\obj\Debug\BLL.pdb
+C:\Users\10186146\Downloads\220215Kevin (1)\230215Kevin\BLL\bin\Debug\BLL.dll
+C:\Users\10186146\Downloads\220215Kevin (1)\230215Kevin\BLL\bin\Debug\BLL.pdb
+C:\Users\10186146\Downloads\220215Kevin (1)\230215Kevin\BLL\bin\Debug\DAL.dll
+C:\Users\10186146\Downloads\220215Kevin (1)\230215Kevin\BLL\bin\Debug\Model.dll
+C:\Users\10186146\Downloads\220215Kevin (1)\230215Kevin\BLL\bin\Debug\DAL.pdb
+C:\Users\10186146\Downloads\220215Kevin (1)\230215Kevin\BLL\bin\Debug\Model.pdb
+C:\Users\10186146\Downloads\220215Kevin (1)\230215Kevin\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\10186146\Downloads\220215Kevin (1)\230215Kevin\BLL\obj\Debug\BLL.dll
+C:\Users\10186146\Downloads\220215Kevin (1)\230215Kevin\BLL\obj\Debug\BLL.pdb
+C:\Users\10186146\Desktop\230215Kevin\BLL\bin\Debug\BLL.dll
+C:\Users\10186146\Desktop\230215Kevin\BLL\bin\Debug\BLL.pdb
+C:\Users\10186146\Desktop\230215Kevin\BLL\bin\Debug\DAL.dll
+C:\Users\10186146\Desktop\230215Kevin\BLL\bin\Debug\Model.dll
+C:\Users\10186146\Desktop\230215Kevin\BLL\bin\Debug\DAL.pdb
+C:\Users\10186146\Desktop\230215Kevin\BLL\bin\Debug\Model.pdb
+C:\Users\10186146\Desktop\230215Kevin\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\10186146\Desktop\230215Kevin\BLL\obj\Debug\BLL.dll
+C:\Users\10186146\Desktop\230215Kevin\BLL\obj\Debug\BLL.pdb

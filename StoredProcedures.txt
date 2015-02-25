@@ -1,0 +1,331 @@
+
+*********Inserting new user accounts*************
+
+CREATE PROCEDURE spInsertUser
+@userFName NVARCHAR(50),
+@userLName NVARCHAR(50),
+@userName NVARCHAR(50),
+@userPass NVARCHAR(400),
+@userId INT OUTPUT
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+	INSERT INTO tblUsers(UserName,UserPass,UserFName, UserLName)
+	VALUES
+	(@userName,@userPass,@userFName,@userLname)
+    SELECT
+	@userId = @@IDENTITY
+END
+GO
+
+
+**********Logging in/Checking availability of userName*****************
+
+
+CREATE PROCEDURE spLogin
+@userNameNVARCHAR(50),
+@userPass NVARCHAR(400),
+AS
+BEGIN
+
+SET NOCOUNT ON;
+
+SELECT * FROM tblUsers WHERE userName = @userName AND userPass = @userPass
+END
+GO
+
+
+
+***********NEW CUSTOMER*****************
+
+
+CREATE PROCEDURE spNewCustomer
+@FName NVARCHAR(70),
+@LName NVARCHAR(70),
+@Email NVARCHAR(100),
+@Phone NVARCHAR(20),
+@Address1 NVARCHAR(100),
+@Address2 NVARCHAR(100),
+@City NVARCHAR(100),
+@County NVARCHAR(50),
+@CustomerId INT OUTPUT
+AS
+BEGIN
+
+INSERT INTO tblCustomer
+(FirstName, LastName, Email, Phone, Address1, Address2, City, County)
+VALUES
+(@FName,@LName,@Email,@Phone,@Address1,@Address2,@City,@County)
+SELECT
+@CustomerId = @@IDENTITY
+END
+GO
+
+************************New Account**************************
+CREATE PROCEDURE spNewAccoount
+
+@AccountId INT,
+@Sort Int,
+@AccountType NVARCHAR(50),
+@Balance INT,
+@Overdraft INT,
+@CustomerId INT,
+AS 
+BEGIN
+
+INSERT 
+INSERT INTO tblAccount 
+(AccountId, Sort, AccountType, Balance, Overdraft, CustomerId)
+VALUES
+(@AccountId,@Sort,@AccountType,@Balance,@Overdraft,@CustomerId)
+END
+GO
+
+
+***********************Find Customer by customer id****************************
+
+CREATE PROCEDURE spFindCustomer
+@CustomerId INT,
+ @FirstName NVARCHAR(70) OUTPUT,
+ @LastName NVARCHAR(70) OUTPUT,
+ @Email NVARCHAR(100) OUTPUT,
+ @Phone NVARCHAR(20) OUTPUT,
+ @Address1 NVARCHAR(100) OUTPUT,
+ @Address2 NVARCHAR(100) OUTPUT,
+ @City NVARCHAR(100) OUTPUT,
+ @County NVARCHAR(50) OUTPUT 
+AS
+BEGIN
+SELECT
+@FirstName = FirstName,
+@LastName = LastName,
+@Email= Email,
+@Phone = Phone,
+@Address1 = Address1,
+@Address2 =Address2,
+@City = City,
+@County = County
+
+FROM tblCustomer
+WHERE
+CustomerId = @CustomerId
+END
+GO
+
+*********************Find Account Details by acc number*************************
+
+I changed this to take out all the values, when we did it on friday we were making a half empty Account Object, which only had the values in the usercontrol, but we may aswell make a full object in case we need all the details for something else. Probably the manage Account or Edit account page or something
+
+CREATE PROCEDURE spFindAccountDetails
+@AccountId INT,
+@CustomerId INT OUTPUT,
+@FirstName NVARCHAR(70) OUTPUT,
+@LastName NVARCHAR(70) OUTPUT,
+@Email NVARCHAR(100) OUTPUT,
+@Phone NVARCHAR(20) OUTPUT,
+@Address1 NVARCHAR(100) OUTPUT,
+@Address2 NVARCHAR(100) OUTPUT,
+@City NVARCHAR(100) OUTPUT,
+@County NVARCHAR(50) OUTPUT, 
+@Sort INT OUTPUT,
+@Balance INT OUTPUT,
+@Overdraft INT OUTPUT
+AS
+BEGIN
+SELECT
+@CustomerId = a.CustomerId,
+@FirstName = a.FirstName,
+@LastName = a.LastName,
+@Email= a.Email,
+@Phone = a.Phone,
+@Address1 = a.Address1,
+@Address2 =a.Address2,
+@City = a.City,
+@County = a.County,
+@Sort = b.Sort,
+@Balance = b.Balance,
+@Overdraft = b.Overdraft
+
+FROM tblCustomer a
+INNER JOIN tblAccount b
+ON a.CustomerId = b.CustomerId
+WHERE
+b.AccountId = @AccountId
+
+END
+
+*******************Populate MainMenu Grid View by order LastName******************* 
+
+I didnt do a select all for the main display because theres no real need to show address and shit i reckon on the main page. We probably only need it if we're lookin at one account in detail
+
+CREATE PROCEDURE spDisplayAccountsLastName
+AS
+BEGIN
+SELECT a.AccountId,
+a.AccountType,
+b.CustomerId,
+b.LastName,
+b.FirstName,
+a.Balance,
+a.Overdraft,
+a.Sort
+
+FROM
+tblAccount a
+INNER JOIN tblCustomer b
+ON a.CustomerId = b.CustomerId
+ORDER BY
+b.LastName
+END
+GO
+
+***********************Update Account Balance ***********************************
+
+This works for deposit and withdrawal, have a look at the method UpdateAccountBalance()
+
+CREATE PROCEDURE spUpdateBalance
+@NewBalance INT,
+@AccountId INT
+AS
+BEGIN
+UPDATE tblAccount
+SET Balance = @NewBalance
+WHERE AccountId = @AccountId
+END
+GO
+
+
+*********************Update Account Details***********************************************
+
+CREATE PROCEDURE spEditAccountDetails
+@FirstName NVARCHAR (70),
+@LastName NVARCHAR (70),
+@Sort INT,
+@AccountType NVARCHAR (50),
+@AccountId INT,
+@CustomerId INT
+AS
+BEGIN
+BEGIN TRANSACTION
+
+UPDATE tblCustomer 
+SET FirstName = @FirstName,
+LastName = @LastName
+FROM tblCustomer a, tblAccount b
+WHERE a.CustomerId = b.CustomerId
+AND a.CustomerId = @CustomerId
+
+UPDATE tblAccount
+SET Sort = @Sort,
+AccountType = @AccountType
+FROM tblCustomer a, tblAccount b
+WHERE a.CustomerId = b.CustomerId
+AND b.AccountId = @AccountId
+
+COMMIT
+END
+GO
+
+************************Store Transaction info*******************************************
+
+CREATE PROCEDURE spTransactionStore
+@TransactionId INT OUTPUT,
+@TransactionType NVARCHAR (50), 
+@AccountId INT, 
+@Amount INT, 
+@DateTimeStamp DATETIME
+AS
+BEGIN
+
+INSERT INTO tblTransaction
+(AccountId, Amount, DateTimeStamp, TransactionType)
+VALUES
+(@AccountId, @Amount, @DateTimeStamp, @TransactionType)
+SELECT 
+@TransactionId = @@IDENTITY
+END
+
+****************************Store Transfer info *********************************************
+
+
+CREATE PROCEDURE spTransferStore
+@TransactionIdSender INT, 
+@TransactionIdReceiver INT,
+@TransDescription NVARCHAR(200),
+@TransferId INT OUTPUT
+AS
+BEGIN
+INSERT INTO tblTransfer
+(Creditor, Debitor, TransDescription)
+VALUES
+(@TransactionIdReceiver, @TransactionIdSender, @TransDescription)
+SELECT
+@TransferId =@@IDENTITY
+END
+GO
+
+
+****************************Display internal transfers *************************
+
+
+
+CREATE PROCEDURE spDisplayInternalTransfers
+AS
+BEGIN
+SELECT (cus.FirstName + ' ' + cus.LastName) AS Sender,
+sen.AccountId, rec.Amount,
+rec.DateTimeStamp, 
+rec.AccountId AS ReceiverAcc, 
+accrec.Sort AS ReceiverSort
+
+FROM
+tblCustomer cus
+INNER JOIN
+tblAccount acc
+ON cus.CustomerId = acc.CustomerId
+
+INNER JOIN
+tblTransaction sen
+ON acc.AccountId = sen.AccountId
+
+INNER JOIN
+tblTransfer tfr
+ON sen.TransactionId = tfr.Debitor
+
+INNER JOIN
+tblTransaction rec
+ON rec.TransactionId = tfr.Creditor
+
+INNER JOIN
+tblAccount accrec
+ON accrec.AccountId = rec.AccountId
+ORDER BY
+rec.DateTimeStamp
+DESC
+END
+
+**********************Display Transactions*********************************
+
+CREATE PROCEDURE spDisplayTransactions
+AS
+BEGIN
+SELECT
+ (cus.FirstName + ' ' + cus.LastName) AS Name,
+ tra.AccountId,
+ tra.Amount,
+ tra.TransactionType,
+ tra.DateTimeStamp
+FROM
+tblCustomer cus
+INNER JOIN
+tblAccount acc
+ON cus.CustomerId = acc.CustomerId
+INNER JOIN
+tblTransaction tra
+ON acc.AccountId = tra.AccountId
+ORDER BY
+tra.DateTimeStamp
+DESC
+END
+GO
