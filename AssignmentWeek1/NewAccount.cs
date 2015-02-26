@@ -36,28 +36,93 @@ namespace AssignmentWeek1
         private void AddPerson()
         {
             Person person = new Person();
+            PresentaionMethods presMeth = new PresentaionMethods();
+            //WILL REFACTOR THIS TO METHOD
 
-            person.FName = cntlPerson.txtFName.Text;
-            person.LName = cntlPerson.txtLName.Text;
-            person.Email = cntlPerson.txtEmail.Text;
-            person.Phone = cntlPerson.txtPhone.Text;
-            person.Address1 = cntlPerson.txtAddress1.Text;
-            person.Address2 = cntlPerson.txtAddress2.Text;
-            person.City = cntlPerson.txtCity.Text;
-            person.County = cntlPerson.cmbCounty.Text;
-
+            bool fNameEmpty = true;
+            bool lNameEmpty = true;
+            bool emailEmpty = true;
+            bool phoneEmpty = true;
+            bool address1Empty = true;
+            bool address2Empty = true;
+            bool cityEmpty = true;
+            bool countyEmpty = true;
+            string message = "";
             
-
-            if (meth.NewCustomer(person))
+            if (presMeth.EmptyChecker(cntlPerson.txtFName.Text, "First Name:") == null)
             {
-                MessageBox.Show("Customer added");
-                PreviousCustomer = true;
-                PageState();
-                lblCustomerIdDisplay.Text = person.CustomerId.ToString();
-                txtInputCustId.Text = person.CustomerId.ToString();
+                fNameEmpty = false;
+                message += presMeth.EmptyChecker(cntlPerson.txtFName.Text, "First Name:");
             }
-            Person = person;
 
+            if (presMeth.EmptyChecker(cntlPerson.txtLName.Text, "Last Name:") == null)
+            {
+                lNameEmpty = false;
+                message += presMeth.EmptyChecker(cntlPerson.txtLName.Text, "Last Name:");
+            }
+
+            if (presMeth.EmptyChecker(cntlPerson.txtEmail.Text, "Email:") == null)
+            {
+                emailEmpty = false;
+                message += presMeth.EmptyChecker(cntlPerson.txtEmail.Text, "Email:");
+            }
+
+            if (presMeth.EmptyChecker(cntlPerson.txtPhone.Text, "Phone:") == null)
+            {
+                phoneEmpty = false;
+                message += presMeth.EmptyChecker(cntlPerson.txtPhone.Text, "Phone:");
+            }
+           
+            if (presMeth.EmptyChecker(cntlPerson.txtAddress1.Text, "Address 1:") == null)
+            {
+                address1Empty = false;
+                message += (presMeth.EmptyChecker(cntlPerson.txtAddress1.Text, "Address 1:"));
+            }
+            if (presMeth.EmptyChecker(cntlPerson.txtAddress2.Text, "Address 2:") == null)
+            {
+                address2Empty = false;
+                message +=(presMeth.EmptyChecker(cntlPerson.txtAddress2.Text, "Address 2:"));
+            }
+            if (presMeth.EmptyChecker(cntlPerson.txtCity.Text, "City :") == null)
+            {
+                cityEmpty = false;
+                message += (presMeth.EmptyChecker(cntlPerson.txtCity.Text, "City :"));
+            }
+            if (presMeth.EmptyChecker(cntlPerson.cmbCounty.Text, "County :") == null)
+            {
+                countyEmpty = false;
+                message += (presMeth.EmptyChecker(cntlPerson.cmbCounty.Text, "County :"));
+            }
+
+            if (!fNameEmpty && !lNameEmpty && !emailEmpty && !phoneEmpty && !address1Empty && !address2Empty && !countyEmpty && !cityEmpty)
+            {
+
+
+                person.FName = cntlPerson.txtFName.Text;
+                person.LName = cntlPerson.txtLName.Text;
+                person.Email = cntlPerson.txtEmail.Text;
+                person.Phone = cntlPerson.txtPhone.Text;
+                person.Address1 = cntlPerson.txtAddress1.Text;
+                person.Address2 = cntlPerson.txtAddress2.Text;
+                person.City = cntlPerson.txtCity.Text;
+                person.County = cntlPerson.cmbCounty.Text;
+
+
+
+                if (meth.NewCustomer(person))
+                {
+                    MessageBox.Show("Customer added");
+                    PreviousCustomer = true;
+                    PageState();
+                    lblCustomerIdDisplay.Text = person.CustomerId.ToString();
+                    txtInputCustId.Text = person.CustomerId.ToString();
+                }
+                Person = person;
+            }
+            else
+            { 
+            MessageBox.Show(message);
+            }
         }
 
         private void btnAddAccount_Click(object sender, EventArgs e)

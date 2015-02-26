@@ -59,3 +59,10 @@ C:\Users\10186146\Desktop\230215Kevin\DAL\bin\Debug\Model.pdb
 C:\Users\10186146\Desktop\230215Kevin\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\10186146\Desktop\230215Kevin\DAL\obj\Debug\DAL.dll
 C:\Users\10186146\Desktop\230215Kevin\DAL\obj\Debug\DAL.pdb
+C:\Users\10186146\Desktop\Project\DAL\bin\Debug\DAL.dll
+C:\Users\10186146\Desktop\Project\DAL\bin\Debug\DAL.pdb
+C:\Users\10186146\Desktop\Project\DAL\bin\Debug\Model.dll
+C:\Users\10186146\Desktop\Project\DAL\bin\Debug\Model.pdb
+C:\Users\10186146\Desktop\Project\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\10186146\Desktop\Project\DAL\obj\Debug\DAL.dll
+C:\Users\10186146\Desktop\Project\DAL\obj\Debug\DAL.pdb
