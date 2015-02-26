@@ -1,6 +1,6 @@
 ﻿namespace AssignmentWeek1
 {
-    partial class Lodgement
+    partial class LodgementForm
     {
         /// <summary>
         /// Required designer variable.

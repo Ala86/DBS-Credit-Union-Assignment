@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Transference
+    public class Transfer
     {
         public Transaction Sender { get; set; }
         public Transaction Receiver { get; set; }

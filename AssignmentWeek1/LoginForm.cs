@@ -11,10 +11,10 @@ using BLL;
 
 namespace AssignmentWeek1
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
 
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -42,7 +42,7 @@ namespace AssignmentWeek1
         private void btnRegister_Click_1(object sender, EventArgs e)
         {
 
-            RegisterUser ru = new RegisterUser();
+            RegisterUserForm ru = new RegisterUserForm();
 
             ru.Show();
 

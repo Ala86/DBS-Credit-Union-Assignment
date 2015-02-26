@@ -1,6 +1,6 @@
 ﻿namespace AssignmentWeek1
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.

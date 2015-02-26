@@ -1,6 +1,6 @@
 ﻿namespace AssignmentWeek1
 {
-    partial class ManageAccount
+    partial class ManageAccountForm
     {
         /// <summary>
         /// Required designer variable.

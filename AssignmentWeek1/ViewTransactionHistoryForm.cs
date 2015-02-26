@@ -11,9 +11,9 @@ using BLL;
 
 namespace AssignmentWeek1
 {
-    public partial class ViewTransactionHistory : Form
+    public partial class ViewTransactionHistoryForm : Form
     {
-        public ViewTransactionHistory()
+        public ViewTransactionHistoryForm()
         {
             InitializeComponent();
         }

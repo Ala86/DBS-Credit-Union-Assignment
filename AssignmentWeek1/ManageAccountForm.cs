@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AssignmentWeek1
 {
-    public partial class ManageAccount : Form
+    public partial class ManageAccountForm : Form
     {
-        public ManageAccount()
+        public ManageAccountForm()
         {
             InitializeComponent();
         }

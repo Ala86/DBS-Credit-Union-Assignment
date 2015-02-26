@@ -12,7 +12,7 @@ using BLL;
 
 namespace AssignmentWeek1
 {
-    public partial class NewAccount : Form
+    public partial class NewAccountForm : Form
     {
         public Person Person { get; set; }
 
@@ -24,7 +24,7 @@ namespace AssignmentWeek1
 
         Methods meth = new Methods();
         
-        public NewAccount()
+        public NewAccountForm()
         {
             InitializeComponent();
         }
@@ -33,11 +33,22 @@ namespace AssignmentWeek1
         {
             AddPerson();
         }
+        private void BoolAssign(bool input)
+        {
+            input = false;
+        }
+
+        //private string AddFillMessage(string message, string Method)
+        //{ 
+        //    return
+        //}
         private void AddPerson()
         {
             Person person = new Person();
             PresentaionMethods presMeth = new PresentaionMethods();
-            //WILL REFACTOR THIS TO METHOD
+            
+            
+            //bool flags to say whether each field has been filled out or not
 
             bool fNameEmpty = true;
             bool lNameEmpty = true;
@@ -49,48 +60,80 @@ namespace AssignmentWeek1
             bool countyEmpty = true;
             string message = "";
             
-            if (presMeth.EmptyChecker(cntlPerson.txtFName.Text, "First Name:") == null)
+            
+            if(presMeth.EmptyChecker(cntlPerson.txtFName.Text, "First Name:") == null)// ? fNameEmpty = false : message += presMeth.EmptyChecker(cntlPerson.txtFName.Text, "First Name:");
             {
                 fNameEmpty = false;
+
+            }
+            else
+            {
                 message += presMeth.EmptyChecker(cntlPerson.txtFName.Text, "First Name:");
             }
 
             if (presMeth.EmptyChecker(cntlPerson.txtLName.Text, "Last Name:") == null)
             {
                 lNameEmpty = false;
+                
+            }
+            else
+            {
                 message += presMeth.EmptyChecker(cntlPerson.txtLName.Text, "Last Name:");
             }
 
             if (presMeth.EmptyChecker(cntlPerson.txtEmail.Text, "Email:") == null)
             {
                 emailEmpty = false;
-                message += presMeth.EmptyChecker(cntlPerson.txtEmail.Text, "Email:");
+                
+            }
+            else
+            { 
+            message += presMeth.EmptyChecker(cntlPerson.txtEmail.Text, "Email:");
             }
 
             if (presMeth.EmptyChecker(cntlPerson.txtPhone.Text, "Phone:") == null)
             {
                 phoneEmpty = false;
+            }
+            else
+            {
                 message += presMeth.EmptyChecker(cntlPerson.txtPhone.Text, "Phone:");
             }
            
             if (presMeth.EmptyChecker(cntlPerson.txtAddress1.Text, "Address 1:") == null)
             {
                 address1Empty = false;
+                
+            }
+            else
+            {
                 message += (presMeth.EmptyChecker(cntlPerson.txtAddress1.Text, "Address 1:"));
             }
             if (presMeth.EmptyChecker(cntlPerson.txtAddress2.Text, "Address 2:") == null)
             {
                 address2Empty = false;
-                message +=(presMeth.EmptyChecker(cntlPerson.txtAddress2.Text, "Address 2:"));
+               
+            }
+            else
+            {
+                message += (presMeth.EmptyChecker(cntlPerson.txtAddress2.Text, "Address 2:"));
             }
             if (presMeth.EmptyChecker(cntlPerson.txtCity.Text, "City :") == null)
             {
                 cityEmpty = false;
+               
+            }
+            else
+            {
                 message += (presMeth.EmptyChecker(cntlPerson.txtCity.Text, "City :"));
             }
             if (presMeth.EmptyChecker(cntlPerson.cmbCounty.Text, "County :") == null)
             {
                 countyEmpty = false;
+                
+            }
+            else
+            {
                 message += (presMeth.EmptyChecker(cntlPerson.cmbCounty.Text, "County :"));
             }
 

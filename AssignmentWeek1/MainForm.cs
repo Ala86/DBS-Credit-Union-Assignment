@@ -23,7 +23,7 @@ namespace AssignmentWeek1
 
         private void newAccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewAccount newacc = new NewAccount();
+            NewAccountForm newacc = new NewAccountForm();
             newacc.OnAccountAdded += DisplayAccountsLastName;
             newacc.Show();
         }
@@ -38,14 +38,14 @@ namespace AssignmentWeek1
             if (selectedRow < 0)
             {
 
-                Lodgement lodge = new Lodgement();
+                LodgementForm lodge = new LodgementForm();
                 lodge.Show();
                 lodge.OnLodgementMade += DisplayAccountsLastName;
             }
             else
             { 
                 int accountNum = (int)dgvAccountDisplay.Rows[selectedRow].Cells[accountColumn].Value;
-                Lodgement lodge = new Lodgement(accountNum);
+                LodgementForm lodge = new LodgementForm(accountNum);
                 lodge.Show();
                 lodge.OnLodgementMade += DisplayAccountsLastName;
             }
@@ -63,14 +63,14 @@ namespace AssignmentWeek1
             if (selectedRow < 0)
             {
 
-                Withdrawal with = new Withdrawal();
+                WithdrawalForm with = new WithdrawalForm();
                 with.Show();
                 with.OnWithdrawalMade += DisplayAccountsLastName;
             }
             else
             {
                 int accountNum = (int)dgvAccountDisplay.Rows[selectedRow].Cells[accountColumn].Value;
-                Withdrawal with = new Withdrawal(accountNum);
+                WithdrawalForm with = new WithdrawalForm(accountNum);
                 with.Show();
                 with.OnWithdrawalMade += DisplayAccountsLastName;
                 
@@ -86,14 +86,14 @@ namespace AssignmentWeek1
             if (selectedRow < 0)
             {
 
-                Transfer trans = new Transfer();
+                TransferForm trans = new TransferForm();
                 trans.Show();
                 trans.OnTransferMade += DisplayAccountsLastName;
             }
             else
             {
                 int accountNum = (int)dgvAccountDisplay.Rows[selectedRow].Cells[accountColumn].Value;
-                Transfer trans = new Transfer(accountNum);
+                TransferForm trans = new TransferForm(accountNum);
                 trans.Show();
                 trans.OnTransferMade += DisplayAccountsLastName;
 
@@ -119,7 +119,7 @@ namespace AssignmentWeek1
 
         private void viewTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ViewTransactionHistory viewTrans = new ViewTransactionHistory();
+            ViewTransactionHistoryForm viewTrans = new ViewTransactionHistoryForm();
 
             viewTrans.Show();
         }

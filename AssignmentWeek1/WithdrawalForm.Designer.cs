@@ -1,6 +1,6 @@
 ﻿namespace AssignmentWeek1
 {
-    partial class Withdrawal
+    partial class WithdrawalForm
     {
         /// <summary>
         /// Required designer variable.

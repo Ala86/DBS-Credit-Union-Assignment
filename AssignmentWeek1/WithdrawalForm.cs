@@ -12,7 +12,7 @@ using BLL;
 
 namespace AssignmentWeek1
 {
-    public partial class Withdrawal : Form
+    public partial class WithdrawalForm : Form
     {
         public Account Account { get; set; }
 
@@ -20,12 +20,12 @@ namespace AssignmentWeek1
 
         public event WithdrawalEv OnWithdrawalMade;
 
-        public Withdrawal()
+        public WithdrawalForm()
         {
             InitializeComponent();
         }
 
-        public Withdrawal(int accountNum)
+        public WithdrawalForm(int accountNum)
         {
             InitializeComponent();
 

@@ -1,6 +1,6 @@
 ﻿namespace AssignmentWeek1
 {
-    partial class ViewTransactionHistory
+    partial class ViewTransactionHistoryForm
     {
         /// <summary>
         /// Required designer variable.

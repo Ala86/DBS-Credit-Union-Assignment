@@ -14,7 +14,7 @@ namespace AssignmentWeek1
 
             if (string.IsNullOrEmpty(input))
             {
-                message = field + " must be filled" + Environment.NewLine;
+                message = field + " must be input" + Environment.NewLine;
             }
             else
             {

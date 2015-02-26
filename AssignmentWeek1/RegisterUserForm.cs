@@ -12,9 +12,9 @@ using BLL;
 
 namespace AssignmentWeek1
 {
-    public partial class RegisterUser : Form
+    public partial class RegisterUserForm : Form
     {
-        public RegisterUser()
+        public RegisterUserForm()
         {
             InitializeComponent();
         }

@@ -130,7 +130,7 @@ namespace BLL
             }
         }
 
-        public bool TransferStore(Transference transfer)
+        public bool TransferStore(Transfer transfer)
         {
             if (dbInt.TransferStore(transfer))
             {

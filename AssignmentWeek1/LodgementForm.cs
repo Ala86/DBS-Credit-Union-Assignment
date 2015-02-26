@@ -12,7 +12,7 @@ using BLL;
 
 namespace AssignmentWeek1
 {
-    public partial class Lodgement : Form
+    public partial class LodgementForm : Form
     {
         // so this page has a property account, this is assigned by the find account button in the usercontrol
 
@@ -22,12 +22,12 @@ namespace AssignmentWeek1
 
         public event LodgementEv OnLodgementMade;
 
-        public Lodgement()
+        public LodgementForm()
         {
             InitializeComponent();
         }
 
-        public Lodgement(int accountNum)
+        public LodgementForm(int accountNum)
         {
             InitializeComponent();
 

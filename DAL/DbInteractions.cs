@@ -366,7 +366,7 @@ namespace DAL
             }
         }
 
-        public bool TransferStore(Transference transfer)
+        public bool TransferStore(Transfer transfer)
         {
 
             TransactionStore(transfer.Sender);
@@ -376,7 +376,7 @@ namespace DAL
             return check3;
 
         }
-        private bool TransferStoreMethod(Transference transfer)
+        private bool TransferStoreMethod(Transfer transfer)
         { 
             int rowsAffected;
             using(SqlConnection cxn = new SqlConnection(configcxn))

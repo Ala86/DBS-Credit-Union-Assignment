@@ -1,6 +1,6 @@
 ﻿namespace AssignmentWeek1
 {
-    partial class RegisterUser
+    partial class RegisterUserForm
     {
         /// <summary>
         /// Required designer variable.

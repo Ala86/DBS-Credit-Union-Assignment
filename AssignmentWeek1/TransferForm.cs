@@ -12,7 +12,7 @@ using BLL;
 
 namespace AssignmentWeek1
 {
-    public partial class Transfer : Form
+    public partial class TransferForm : Form
     {
         public Account Sender { get; set; }
         public Account Receiver { get; set; }
@@ -20,11 +20,11 @@ namespace AssignmentWeek1
         public delegate void Transfered();
         public event Transfered OnTransferMade;
 
-        public Transfer()
+        public TransferForm()
         {
             InitializeComponent();
         }
-        public Transfer(int accountNum)
+        public TransferForm(int accountNum)
         {
             InitializeComponent();
 
@@ -69,7 +69,7 @@ namespace AssignmentWeek1
                 receiver.TimeStamp = DateTime.Now;
                 receiver.TransactionType = "TransferIn";
 
-                Transference transfer = new Transference();
+                Transfer transfer = new Transfer();
 
                 transfer.Sender = sending;
                 transfer.Receiver = receiver;

@@ -1,6 +1,6 @@
 ﻿namespace AssignmentWeek1
 {
-    partial class Transfer
+    partial class TransferForm
     {
         /// <summary>
         /// Required designer variable.
