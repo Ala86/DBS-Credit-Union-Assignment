@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using BLL;
+using System.Configuration;
 
 namespace AssignmentWeek1
 {
@@ -18,6 +19,7 @@ namespace AssignmentWeek1
 
         public bool PreviousCustomer { get; set; }
 
+        //**********Have to change these events to MS event format****************
         public delegate void AddAccount();
 
         public event AddAccount OnAccountAdded;
@@ -44,7 +46,7 @@ namespace AssignmentWeek1
         //}
         private void AddPerson()
         {
-            Person person = new Person();
+            
             PresentaionMethods presMeth = new PresentaionMethods();
             
             
@@ -59,88 +61,32 @@ namespace AssignmentWeek1
             bool cityEmpty = true;
             bool countyEmpty = true;
             string message = "";
-            
-            
-            if(presMeth.EmptyChecker(cntlPerson.txtFName.Text, "First Name:") == null)// ? fNameEmpty = false : message += presMeth.EmptyChecker(cntlPerson.txtFName.Text, "First Name:");
-            {
-                fNameEmpty = false;
 
-            }
-            else
-            {
-                message += presMeth.EmptyChecker(cntlPerson.txtFName.Text, "First Name:");
-            }
+            //checking to see that all fields have been input
+            fNameEmpty = string.IsNullOrEmpty(cntlPerson.txtFName.Text) ? false : true;
 
-            if (presMeth.EmptyChecker(cntlPerson.txtLName.Text, "Last Name:") == null)
-            {
-                lNameEmpty = false;
-                
-            }
-            else
-            {
-                message += presMeth.EmptyChecker(cntlPerson.txtLName.Text, "Last Name:");
-            }
-
-            if (presMeth.EmptyChecker(cntlPerson.txtEmail.Text, "Email:") == null)
-            {
-                emailEmpty = false;
-                
-            }
-            else
-            { 
-            message += presMeth.EmptyChecker(cntlPerson.txtEmail.Text, "Email:");
-            }
-
-            if (presMeth.EmptyChecker(cntlPerson.txtPhone.Text, "Phone:") == null)
-            {
-                phoneEmpty = false;
-            }
-            else
-            {
-                message += presMeth.EmptyChecker(cntlPerson.txtPhone.Text, "Phone:");
-            }
+            lNameEmpty = string.IsNullOrEmpty(cntlPerson.txtLName.Text) ? false : true;
            
-            if (presMeth.EmptyChecker(cntlPerson.txtAddress1.Text, "Address 1:") == null)
-            {
-                address1Empty = false;
-                
-            }
-            else
-            {
-                message += (presMeth.EmptyChecker(cntlPerson.txtAddress1.Text, "Address 1:"));
-            }
-            if (presMeth.EmptyChecker(cntlPerson.txtAddress2.Text, "Address 2:") == null)
-            {
-                address2Empty = false;
-               
-            }
-            else
-            {
-                message += (presMeth.EmptyChecker(cntlPerson.txtAddress2.Text, "Address 2:"));
-            }
-            if (presMeth.EmptyChecker(cntlPerson.txtCity.Text, "City :") == null)
-            {
-                cityEmpty = false;
-               
-            }
-            else
-            {
-                message += (presMeth.EmptyChecker(cntlPerson.txtCity.Text, "City :"));
-            }
-            if (presMeth.EmptyChecker(cntlPerson.cmbCounty.Text, "County :") == null)
-            {
-                countyEmpty = false;
-                
-            }
-            else
-            {
-                message += (presMeth.EmptyChecker(cntlPerson.cmbCounty.Text, "County :"));
-            }
+            //checking to see if email is correct format 
+            emailEmpty = string.IsNullOrEmpty(cntlPerson.txtEmail.Text) ? false : true;
+            emailEmpty = presMeth.EmailValidator(cntlPerson.txtEmail.Text) == null ? false:true;
+            
+            phoneEmpty = string.IsNullOrEmpty(cntlPerson.txtPhone.Text) ? false : true;
+            phoneEmpty = presMeth.PhoneValidator(cntlPerson.txtPhone.Text) == null ? false : true;
+
+            address1Empty= string.IsNullOrEmpty(cntlPerson.txtAddress1.Text) ? false : true;
+                        
+            address2Empty = string.IsNullOrEmpty(cntlPerson.txtAddress2.Text) ? false : true;
+            
+            cityEmpty = string.IsNullOrEmpty(cntlPerson.txtCity.Text) ? false : true;
+            
+            countyEmpty = string.IsNullOrEmpty(cntlPerson.cmbCounty.Text) ? false : true;
+            
 
             if (!fNameEmpty && !lNameEmpty && !emailEmpty && !phoneEmpty && !address1Empty && !address2Empty && !countyEmpty && !cityEmpty)
             {
 
-
+                Person person = new Person();
                 person.FName = cntlPerson.txtFName.Text;
                 person.LName = cntlPerson.txtLName.Text;
                 person.Email = cntlPerson.txtEmail.Text;
@@ -150,21 +96,52 @@ namespace AssignmentWeek1
                 person.City = cntlPerson.txtCity.Text;
                 person.County = cntlPerson.cmbCounty.Text;
 
-
-
                 if (meth.NewCustomer(person))
                 {
                     MessageBox.Show("Customer added");
                     PreviousCustomer = true;
+                    //check state of page/refresh
                     PageState();
-                    lblCustomerIdDisplay.Text = person.CustomerId.ToString();
+
+                    
                     txtInputCustId.Text = person.CustomerId.ToString();
                 }
                 Person = person;
             }
             else
-            { 
-            MessageBox.Show(message);
+            {
+                //If fields are left empty this string of methods will create a message notifying the user which fields
+                // are left blank. 
+                message += presMeth.EmptyNotifier(cntlPerson.txtFName.Text, "First Name:");
+                message += presMeth.EmptyNotifier(cntlPerson.txtLName.Text, "Last Name:");
+                
+                
+                if (presMeth.EmptyNotifier(cntlPerson.txtEmail.Text, "Email:") == null)
+                {
+                    //this will notify the user if email is in incorrect format
+                    message += presMeth.EmailValidator(cntlPerson.txtEmail.Text);
+                }
+                else
+                {
+                    message += presMeth.EmptyNotifier(cntlPerson.txtEmail.Text, "Email:");
+                }
+                
+                if (presMeth.EmptyNotifier(cntlPerson.txtPhone.Text, "Phone:")==null)
+                {
+                    //this will notify the user if phone is in incorrect format
+                    message += presMeth.PhoneValidator(cntlPerson.txtPhone.Text);
+                }
+                else
+                {
+                    message += presMeth.EmptyNotifier(cntlPerson.txtPhone.Text, "Phone:");
+                }
+           
+                message += (presMeth.EmptyNotifier(cntlPerson.txtAddress1.Text, "Address 1:"));
+                message += (presMeth.EmptyNotifier(cntlPerson.txtAddress2.Text, "Address 2:"));
+                message += (presMeth.EmptyNotifier(cntlPerson.txtCity.Text, "City :"));
+                message += (presMeth.EmptyNotifier(cntlPerson.cmbCounty.Text, "County :"));
+            
+                MessageBox.Show(message);
             }
         }
 
@@ -190,7 +167,7 @@ namespace AssignmentWeek1
 
         private void NewAccount_Load(object sender, EventArgs e)
         {
-            cntlAccount.txtSortCode.Text = "101010";
+            cntlAccount.txtSortCode.Text = ConfigurationManager.AppSettings["SortCode"];
             cntlAccount.txtSortCode.Enabled = false;
         }
 

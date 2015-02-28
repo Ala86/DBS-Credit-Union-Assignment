@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnAddCustomer = new System.Windows.Forms.Button();
-            this.lblCustomerIdDisplay = new System.Windows.Forms.Label();
             this.txtInputCustId = new System.Windows.Forms.TextBox();
             this.lblCustomerId = new System.Windows.Forms.Label();
             this.btnAddAccount = new System.Windows.Forms.Button();
@@ -51,15 +50,6 @@
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
-            // 
-            // lblCustomerIdDisplay
-            // 
-            this.lblCustomerIdDisplay.AutoSize = true;
-            this.lblCustomerIdDisplay.Location = new System.Drawing.Point(119, 503);
-            this.lblCustomerIdDisplay.Name = "lblCustomerIdDisplay";
-            this.lblCustomerIdDisplay.Size = new System.Drawing.Size(60, 13);
-            this.lblCustomerIdDisplay.TabIndex = 3;
-            this.lblCustomerIdDisplay.Text = "CustomerId";
             // 
             // txtInputCustId
             // 
@@ -149,7 +139,7 @@
             this.btnFindCustomer.UseVisualStyleBackColor = true;
             this.btnFindCustomer.Click += new System.EventHandler(this.btnFindCustomer_Click);
             // 
-            // NewAccount
+            // NewAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,11 +151,10 @@
             this.Controls.Add(this.btnAddAccount);
             this.Controls.Add(this.lblCustomerId);
             this.Controls.Add(this.txtInputCustId);
-            this.Controls.Add(this.lblCustomerIdDisplay);
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.cntlAccount);
             this.Controls.Add(this.cntlPerson);
-            this.Name = "NewAccount";
+            this.Name = "NewAccountForm";
             this.Text = "NewAccount";
             this.Load += new System.EventHandler(this.NewAccount_Load);
             this.ResumeLayout(false);
@@ -178,7 +167,6 @@
         private ClassLibrary1.PersonControl cntlPerson;
         private ClassLibrary1.AccControl cntlAccount;
         private System.Windows.Forms.Button btnAddCustomer;
-        private System.Windows.Forms.Label lblCustomerIdDisplay;
         private System.Windows.Forms.TextBox txtInputCustId;
         private System.Windows.Forms.Label lblCustomerId;
         private System.Windows.Forms.Button btnAddAccount;
