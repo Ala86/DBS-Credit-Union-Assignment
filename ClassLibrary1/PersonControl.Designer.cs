@@ -206,6 +206,7 @@
             this.Controls.Add(this.label3);
             this.Name = "PersonControl";
             this.Size = new System.Drawing.Size(250, 324);
+            this.Load += new System.EventHandler(this.PersonControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

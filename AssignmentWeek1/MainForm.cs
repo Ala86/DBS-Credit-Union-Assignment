@@ -23,9 +23,7 @@ namespace AssignmentWeek1
 
         private void newAccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewAccountForm newacc = new NewAccountForm();
-            newacc.OnAccountAdded += DisplayAccountsLastName;
-            newacc.Show();
+            
         }
 
         private void lodgementToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,6 +120,25 @@ namespace AssignmentWeek1
             ViewTransactionHistoryForm viewTrans = new ViewTransactionHistoryForm();
 
             viewTrans.Show();
+        }
+
+        private void newCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewCustomer newcus = new NewCustomer();
+            newcus.Show();
+        }
+
+        private void existingCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewAccountForm newacc = new NewAccountForm();
+            newacc.OnAccountAdded += DisplayAccountsLastName;
+            newacc.Show();
+        }
+
+        private void editAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditAccount edit = new EditAccount();
+            edit.Show();
         }
     }
 }

@@ -442,6 +442,47 @@ namespace DAL
             }
          }
 
+        public bool EditAccountDetails(Account acc)
+        {
+            int rowsAffected;
+            string newEmail = acc.Person.Email;
+            string newPhone = acc.Person.Phone;
+            string newAddress1 = acc.Person.Address1;
+            string newAddress2 = acc.Person.Address2;
+            string newCity = acc.Person.City;
+            string newCounty = acc.Person.County;
+            int accountNumber = acc.AccountNo;
+
+            using (SqlConnection cxn = new SqlConnection(configcxn))
+            {
+                SqlCommand cmd = new SqlCommand("spEditAccountDetails", cxn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@Email", SqlDbType.NVarChar, 100).Value = newEmail;
+                cmd.Parameters.Add("@Phone", SqlDbType.NVarChar, 20).Value = newPhone;
+                cmd.Parameters.Add("@Address1", SqlDbType.NVarChar, 100).Value = newAddress1;
+                cmd.Parameters.Add("@Address2", SqlDbType.NVarChar, 100).Value = newAddress2;
+                cmd.Parameters.Add("@City", SqlDbType.NVarChar, 100).Value = newCity;
+                cmd.Parameters.Add("@County", SqlDbType.NVarChar, 50).Value = newCounty;
+
+                cxn.Open();
+                rowsAffected = cmd.ExecuteNonQuery();
+                cxn.Close();
+
+
+            }
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+
         }
     }
 

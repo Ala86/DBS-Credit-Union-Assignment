@@ -12,6 +12,9 @@ namespace ClassLibrary1
 {
     public partial class PersonControl : UserControl
     {
+        public bool EditOnly { get; set; }
+
+
         public PersonControl()
         {
             InitializeComponent();
@@ -20,6 +23,15 @@ namespace ClassLibrary1
         private void cmbCounty_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void PersonControl_Load(object sender, EventArgs e)
+        {
+            if (EditOnly)
+            {
+                txtFName.Enabled = false;
+                txtLName.Enabled = false;
+            }
         }
     }
 }

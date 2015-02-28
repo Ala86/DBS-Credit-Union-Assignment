@@ -152,6 +152,25 @@ namespace BLL
                 return transaction = null;
             }
         }
+
+        public bool EditAccountDetails(string email, string phone, string address1, string address2, string city, string county, int overdraft, Account acc)
+        {
+            acc.Person.Email = email;
+            acc.Person.Phone = phone;
+            acc.Person.Address1 = address1;
+            acc.Person.Address2 = address2;
+            acc.Person.City = city;
+            acc.Person.County = county;
+
+            if (dbInt.EditAccountDetails(acc))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     
     }
 }

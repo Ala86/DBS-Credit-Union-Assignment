@@ -120,7 +120,7 @@
             this.label9.TabIndex = 56;
             this.label9.Text = "Account Type:";
             // 
-            // AddAccount
+            // AccControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,8 +133,9 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Name = "AddAccount";
+            this.Name = "AccControl";
             this.Size = new System.Drawing.Size(327, 165);
+            this.Load += new System.EventHandler(this.AccControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
