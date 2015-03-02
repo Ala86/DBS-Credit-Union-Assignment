@@ -50,7 +50,21 @@ namespace AssignmentWeek1
             cntlPerson.txtEmail.Text = acc.Person.Email;
             cntlPerson.txtPhone.Text = acc.Person.Phone;
             cntlPerson.txtCity.Text = acc.Person.City;
+            cntlPerson.txtAddress1.Text = acc.Person.Address1;
+            cntlPerson.txtAddress2.Text = acc.Person.Address2;
+            cntlAccount.txtOverdraft.Text = acc.Overdraft.ToString();
+            cntlAccount.txtSortCode.Text = acc.SortCode.ToString();
+            cntlAccount.txtBalance.Text = acc.Balance.ToString();
+            if (acc.AccountType == "Current")
+            {
+                cntlAccount.rdoCurrent.Checked = true;
+            }
+            else if (acc.AccountType == "Savings")
+            {
+                cntlAccount.rdoSavings.Checked = true;
+            }
         }
+        
 
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
@@ -75,24 +89,26 @@ namespace AssignmentWeek1
             string message = "";
 
             //checking to see that all fields have been input
-            fNameEmpty = string.IsNullOrEmpty(cntlPerson.txtFName.Text) ? false : true;
+            fNameEmpty = string.IsNullOrEmpty(cntlPerson.txtFName.Text) ? true:false;
 
-            lNameEmpty = string.IsNullOrEmpty(cntlPerson.txtLName.Text) ? false : true;
+            lNameEmpty = string.IsNullOrEmpty(cntlPerson.txtLName.Text) ? true : false;
 
             //checking to see if email is correct format 
-            emailEmpty = string.IsNullOrEmpty(cntlPerson.txtEmail.Text) ? false : true;
-            emailEmpty = presMeth.EmailValidator(cntlPerson.txtEmail.Text) == null ? false : true;
+            emailEmpty = string.IsNullOrEmpty(cntlPerson.txtEmail.Text) ? true : false;
 
-            phoneEmpty = string.IsNullOrEmpty(cntlPerson.txtPhone.Text) ? false : true;
+            emailEmpty = presMeth.EmailValidator(cntlPerson.txtEmail.Text) == null ?  false: true;
+
+            phoneEmpty = string.IsNullOrEmpty(cntlPerson.txtPhone.Text) ? true : false;
+
             phoneEmpty = presMeth.PhoneValidator(cntlPerson.txtPhone.Text) == null ? false : true;
 
-            address1Empty = string.IsNullOrEmpty(cntlPerson.txtAddress1.Text) ? false : true;
+            address1Empty = string.IsNullOrEmpty(cntlPerson.txtAddress1.Text) ? true : false;
 
-            address2Empty = string.IsNullOrEmpty(cntlPerson.txtAddress2.Text) ? false : true;
+            address2Empty = string.IsNullOrEmpty(cntlPerson.txtAddress2.Text) ? true : false;
 
-            cityEmpty = string.IsNullOrEmpty(cntlPerson.txtCity.Text) ? false : true;
+            cityEmpty = string.IsNullOrEmpty(cntlPerson.txtCity.Text) ? true : false;
 
-            countyEmpty = string.IsNullOrEmpty(cntlPerson.cmbCounty.Text) ? false : true;
+            countyEmpty = string.IsNullOrEmpty(cntlPerson.cmbCounty.Text) ? true : false;
 
 
             if (!fNameEmpty && !lNameEmpty && !emailEmpty && !phoneEmpty && !address1Empty && !address2Empty && !countyEmpty && !cityEmpty)

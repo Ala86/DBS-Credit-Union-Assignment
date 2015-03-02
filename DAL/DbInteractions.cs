@@ -479,6 +479,7 @@ namespace DAL
             string newCity = acc.Person.City;
             string newCounty = acc.Person.County;
             int accountNumber = acc.AccountNo;
+            int sort = acc.SortCode;
 
             using (SqlConnection cxn = new SqlConnection(configcxn))
             {
@@ -491,6 +492,8 @@ namespace DAL
                 cmd.Parameters.Add("@Address2", SqlDbType.NVarChar, 100).Value = newAddress2;
                 cmd.Parameters.Add("@City", SqlDbType.NVarChar, 100).Value = newCity;
                 cmd.Parameters.Add("@County", SqlDbType.NVarChar, 50).Value = newCounty;
+                cmd.Parameters.Add("@Sort", SqlDbType.NVarChar, 50).Value = sort;
+                cmd.Parameters.Add("@AccountId", SqlDbType.Int).Value = accountNumber;
 
                 cxn.Open();
                 rowsAffected = cmd.ExecuteNonQuery();

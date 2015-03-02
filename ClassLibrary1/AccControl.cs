@@ -35,8 +35,8 @@ namespace ClassLibrary1
             if (EditOnly)
             {
                 txtBalance.Enabled = false;
-                radioSavings.Enabled = false;
-                radioCurrent.Enabled = false;
+                rdoSavings.Enabled = false;
+                rdoCurrent.Enabled = false;
                 txtSortCode.Enabled = false;
             }
         }

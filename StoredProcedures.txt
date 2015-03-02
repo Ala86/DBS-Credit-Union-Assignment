@@ -199,33 +199,39 @@ GO
 *********************Update Account Details***********************************************
 
 CREATE PROCEDURE spEditAccountDetails
-@FirstName NVARCHAR (70),
-@LastName NVARCHAR (70),
+ALTER PROCEDURE [dbo].[spEditAccountDetails]
+@Email NVarChar (100),
+@Phone NVarChar (20),
+@Address1 NVarChar (100),
+@Address2 NVarChar (100),
+@City NVarChar (100),
+@County NVarChar (50),
 @Sort INT,
-@AccountType NVARCHAR (50),
-@AccountId INT,
-@CustomerId INT
+@AccountId INT 
 AS
 BEGIN
+SET NOCOUNT ON
 BEGIN TRANSACTION
 
 UPDATE tblCustomer 
-SET FirstName = @FirstName,
-LastName = @LastName
+SET Email = @Email,
+Phone = @Phone,
+Address1 = @Address1,
+Address2 = @Address2,
+City = @City,
+County = @County
 FROM tblCustomer a, tblAccount b
 WHERE a.CustomerId = b.CustomerId
-AND a.CustomerId = @CustomerId
+AND b.AccountId = @AccountId
 
 UPDATE tblAccount
-SET Sort = @Sort,
-AccountType = @AccountType
+SET Sort = @Sort
 FROM tblCustomer a, tblAccount b
 WHERE a.CustomerId = b.CustomerId
 AND b.AccountId = @AccountId
 
 COMMIT
 END
-GO
 
 ************************Store Transaction info*******************************************
 

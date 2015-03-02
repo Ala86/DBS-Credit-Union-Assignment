@@ -31,8 +31,8 @@
             this.txtOverdraft = new System.Windows.Forms.TextBox();
             this.txtBalance = new System.Windows.Forms.TextBox();
             this.txtSortCode = new System.Windows.Forms.TextBox();
-            this.radioSavings = new System.Windows.Forms.RadioButton();
-            this.radioCurrent = new System.Windows.Forms.RadioButton();
+            this.rdoSavings = new System.Windows.Forms.RadioButton();
+            this.rdoCurrent = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,29 +60,29 @@
             this.txtSortCode.Size = new System.Drawing.Size(100, 20);
             this.txtSortCode.TabIndex = 62;
             // 
-            // radioSavings
+            // rdoSavings
             // 
-            this.radioSavings.AutoSize = true;
-            this.radioSavings.Location = new System.Drawing.Point(216, 9);
-            this.radioSavings.Name = "radioSavings";
-            this.radioSavings.Size = new System.Drawing.Size(106, 17);
-            this.radioSavings.TabIndex = 61;
-            this.radioSavings.TabStop = true;
-            this.radioSavings.Text = "Savings Account";
-            this.radioSavings.UseVisualStyleBackColor = true;
-            this.radioSavings.CheckedChanged += new System.EventHandler(this.radioSavings_CheckedChanged);
+            this.rdoSavings.AutoSize = true;
+            this.rdoSavings.Location = new System.Drawing.Point(216, 9);
+            this.rdoSavings.Name = "rdoSavings";
+            this.rdoSavings.Size = new System.Drawing.Size(106, 17);
+            this.rdoSavings.TabIndex = 61;
+            this.rdoSavings.TabStop = true;
+            this.rdoSavings.Text = "Savings Account";
+            this.rdoSavings.UseVisualStyleBackColor = true;
+            this.rdoSavings.CheckedChanged += new System.EventHandler(this.radioSavings_CheckedChanged);
             // 
-            // radioCurrent
+            // rdoCurrent
             // 
-            this.radioCurrent.AutoSize = true;
-            this.radioCurrent.Location = new System.Drawing.Point(108, 9);
-            this.radioCurrent.Name = "radioCurrent";
-            this.radioCurrent.Size = new System.Drawing.Size(102, 17);
-            this.radioCurrent.TabIndex = 60;
-            this.radioCurrent.TabStop = true;
-            this.radioCurrent.Text = "Current Account";
-            this.radioCurrent.UseVisualStyleBackColor = true;
-            this.radioCurrent.CheckedChanged += new System.EventHandler(this.radioCurrent_CheckedChanged);
+            this.rdoCurrent.AutoSize = true;
+            this.rdoCurrent.Location = new System.Drawing.Point(108, 9);
+            this.rdoCurrent.Name = "rdoCurrent";
+            this.rdoCurrent.Size = new System.Drawing.Size(102, 17);
+            this.rdoCurrent.TabIndex = 60;
+            this.rdoCurrent.TabStop = true;
+            this.rdoCurrent.Text = "Current Account";
+            this.rdoCurrent.UseVisualStyleBackColor = true;
+            this.rdoCurrent.CheckedChanged += new System.EventHandler(this.radioCurrent_CheckedChanged);
             // 
             // label12
             // 
@@ -127,8 +127,8 @@
             this.Controls.Add(this.txtOverdraft);
             this.Controls.Add(this.txtBalance);
             this.Controls.Add(this.txtSortCode);
-            this.Controls.Add(this.radioSavings);
-            this.Controls.Add(this.radioCurrent);
+            this.Controls.Add(this.rdoSavings);
+            this.Controls.Add(this.rdoCurrent);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -146,11 +146,11 @@
         public System.Windows.Forms.TextBox txtOverdraft;
         public System.Windows.Forms.TextBox txtBalance;
         public System.Windows.Forms.TextBox txtSortCode;
-        private System.Windows.Forms.RadioButton radioSavings;
-        private System.Windows.Forms.RadioButton radioCurrent;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.RadioButton rdoSavings;
+        public System.Windows.Forms.RadioButton rdoCurrent;
     }
 }
