@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using Model;
 
 namespace AssignmentWeek1
 {
@@ -25,18 +26,24 @@ namespace AssignmentWeek1
             {
                 string firstName = txtFirstName.Text;
                 string lastName = txtLastName.Text;
-                string userName = txtUserName.Text;
+                string username = txtUserName.Text;
                 string password = txtEntPwdAgain.Text;
 
                 Methods meth = new Methods();
+                Employee emp = new Employee();
 
-                if (meth.RegisterUser(firstName, lastName, userName, password))
+                emp.FirstName = firstName;
+                emp.LastName = lastName;
+                emp.Password = password;
+                emp.Username = username;
+                
+                if (meth.RegisterUser(emp))
                 {
                     MessageBox.Show("New account has been successfully created");
                 }
                 else
                 {
-                    MessageBox.Show("Account creation failed");
+                    MessageBox.Show("Username already exists");
                 }
             }
             else

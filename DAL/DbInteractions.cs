@@ -51,22 +51,44 @@ namespace DAL
             }
             
         }
-        //Create class user
-        public bool RegisterUser(string firstName, string lastName, string userName, string password)
-        {
 
+        //Create class user
+        public bool RegisterUser(Employee emp)
+        {
+            bool nameAvailable = false;
+
+            using (SqlConnection cxn = new SqlConnection(configcxn))
+            {
+                SqlDataReader dr = null;
+                SqlCommand cmd = cxn.CreateCommand();
+
+                cmd.Parameters.Add("@Username", SqlDbType.NVarChar, 50).Value = emp.Username;
+                cxn.Open();
+                dr = cmd.ExecuteReader();
+                
+                if (dr.Read())
+                {
+                    nameAvailable = true;
+                }
+                
+                dr.Close();
+                cxn.Close();
+            }
+
+            if (nameAvailable == true)
+            {
                 using (SqlConnection cxn = new SqlConnection(configcxn))
                 {
                     //Have to check existing accounts first, using login stored procedure to return 
 
                     SqlCommand cmd = cxn.CreateCommand();
-                    cmd.Parameters.Add("@userFName", SqlDbType.NVarChar, 50).Value = firstName;
-                    cmd.Parameters.Add("@userLName", SqlDbType.NVarChar, 50).Value = lastName;
-                    cmd.Parameters.Add("@userName", SqlDbType.NVarChar, 50).Value = userName;
-                    cmd.Parameters.Add("@userPass", SqlDbType.NVarChar, 400).Value = password;
+                    cmd.Parameters.Add("@userFName", SqlDbType.NVarChar, 50).Value = emp.FirstName;
+                    cmd.Parameters.Add("@userLName", SqlDbType.NVarChar, 50).Value = emp.LastName;
+                    cmd.Parameters.Add("@userName", SqlDbType.NVarChar, 50).Value = emp.Username;
+                    cmd.Parameters.Add("@userPass", SqlDbType.NVarChar, 400).Value = emp.Password;
+                    //output parameter to find userId
                     cmd.Parameters.Add("@userId", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-                   
                     cmd.CommandText = "spInsertUser";
 
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -76,7 +98,7 @@ namespace DAL
                     cmd.ExecuteNonQuery();
 
                     cxn.Close();
-                    
+
                     //Stored new userId
                     int newUserId = Convert.ToInt32(cmd.Parameters["@userId"].Value);
 
@@ -89,6 +111,11 @@ namespace DAL
                         return false;
                     }
                 }
+            }
+            else
+            {
+                return false;
+            }
                 
         }
 

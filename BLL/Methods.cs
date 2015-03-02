@@ -32,11 +32,12 @@ namespace BLL
             }
         }
 
-        public bool RegisterUser(string firstName, string lastName, string userName, string password)
+        public bool RegisterUser(Employee emp)
         {
-            string encryptPass = hc.PassHash(password);
+            string encryptPass = hc.PassHash(emp.Password);
+            emp.Password = encryptPass;
 
-            if (dbInt.RegisterUser(firstName, lastName, userName, encryptPass))
+            if (dbInt.RegisterUser(emp))
             {
                 return true;
             }
