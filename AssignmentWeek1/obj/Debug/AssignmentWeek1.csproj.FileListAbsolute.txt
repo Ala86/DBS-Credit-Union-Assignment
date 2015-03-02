@@ -297,3 +297,5 @@ C:\Users\Simon\Desktop\project\AssignmentWeek1\obj\Debug\AssignmentWeek1.Withdra
 C:\Users\Simon\Desktop\project\AssignmentWeek1\obj\Debug\AssignmentWeek1.csproj.GenerateResource.Cache
 C:\Users\Simon\Desktop\project\AssignmentWeek1\obj\Debug\AssignmentWeek1.NewCustomer.resources
 C:\Users\Simon\Desktop\project\AssignmentWeek1\obj\Debug\AssignmentWeek1.EditAccount.resources
+C:\Users\10186146\Desktop\project\AssignmentWeek1\obj\Debug\AssignmentWeek1.EditAccount.resources
+C:\Users\10186146\Desktop\project\AssignmentWeek1\obj\Debug\AssignmentWeek1.NewCustomerForm.resources

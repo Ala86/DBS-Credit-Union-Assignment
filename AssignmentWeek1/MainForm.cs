@@ -124,7 +124,7 @@ namespace AssignmentWeek1
 
         private void newCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewCustomer newcus = new NewCustomer();
+            NewCustomerForm newcus = new NewCustomerForm();
             newcus.Show();
         }
 

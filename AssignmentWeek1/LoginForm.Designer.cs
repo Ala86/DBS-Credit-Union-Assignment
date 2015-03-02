@@ -35,22 +35,24 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblPass = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.picDbsLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picDbsLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(166, 175);
+            this.btnClose.Location = new System.Drawing.Point(205, 310);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(84, 39);
+            this.btnClose.Size = new System.Drawing.Size(84, 26);
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(64, 175);
+            this.btnLogin.Location = new System.Drawing.Point(103, 310);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(87, 39);
+            this.btnLogin.Size = new System.Drawing.Size(87, 26);
             this.btnLogin.TabIndex = 13;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -58,7 +60,7 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(266, 175);
+            this.btnRegister.Location = new System.Drawing.Point(12, 370);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(88, 39);
             this.btnRegister.TabIndex = 12;
@@ -68,22 +70,23 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(125, 137);
+            this.txtPass.Location = new System.Drawing.Point(164, 266);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(100, 20);
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(125, 20);
             this.txtPass.TabIndex = 11;
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(125, 110);
+            this.txtUserName.Location = new System.Drawing.Point(164, 239);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtUserName.Size = new System.Drawing.Size(125, 20);
             this.txtUserName.TabIndex = 10;
             // 
             // lblPass
             // 
             this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(61, 140);
+            this.lblPass.Location = new System.Drawing.Point(100, 269);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(56, 13);
             this.lblPass.TabIndex = 9;
@@ -92,17 +95,29 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(61, 113);
+            this.lblUserName.Location = new System.Drawing.Point(100, 242);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(58, 13);
             this.lblUserName.TabIndex = 8;
             this.lblUserName.Text = "Username:";
             // 
-            // Login
+            // picDbsLogo
+            // 
+            this.picDbsLogo.Image = global::AssignmentWeek1.Properties.Resources.DBS_logo_small;
+            this.picDbsLogo.InitialImage = global::AssignmentWeek1.Properties.Resources.DBS_logo_small;
+            this.picDbsLogo.Location = new System.Drawing.Point(-3, -3);
+            this.picDbsLogo.Name = "picDbsLogo";
+            this.picDbsLogo.Size = new System.Drawing.Size(403, 230);
+            this.picDbsLogo.TabIndex = 15;
+            this.picDbsLogo.TabStop = false;
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 253);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(400, 421);
+            this.Controls.Add(this.picDbsLogo);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRegister);
@@ -110,8 +125,9 @@
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.lblUserName);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.picDbsLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +142,6 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.PictureBox picDbsLogo;
     }
 }

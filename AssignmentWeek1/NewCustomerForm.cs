@@ -12,13 +12,13 @@ using BLL;
 
 namespace AssignmentWeek1
 {
-    public partial class NewCustomer : Form
+    public partial class NewCustomerForm : Form
     {
         Person person { get; set; }
         public bool PreviousCustomer { get; set; }
         Methods meth = new Methods();
 
-        public NewCustomer()
+        public NewCustomerForm()
         {
             InitializeComponent();
         }

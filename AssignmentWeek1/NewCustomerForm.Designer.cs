@@ -1,6 +1,6 @@
 ﻿namespace AssignmentWeek1
 {
-    partial class NewCustomer
+    partial class NewCustomerForm
     {
         /// <summary>
         /// Required designer variable.

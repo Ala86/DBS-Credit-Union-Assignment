@@ -35,14 +35,14 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.existingCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lodgementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.withdrawalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.existingCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccountDisplay)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +108,20 @@
             this.newAccountToolStripMenuItem.Text = "New Account";
             this.newAccountToolStripMenuItem.Click += new System.EventHandler(this.newAccountToolStripMenuItem_Click);
             // 
+            // newCustomerToolStripMenuItem
+            // 
+            this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.newCustomerToolStripMenuItem.Text = "New Customer";
+            this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click);
+            // 
+            // existingCustomerToolStripMenuItem
+            // 
+            this.existingCustomerToolStripMenuItem.Name = "existingCustomerToolStripMenuItem";
+            this.existingCustomerToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.existingCustomerToolStripMenuItem.Text = "Existing Customer";
+            this.existingCustomerToolStripMenuItem.Click += new System.EventHandler(this.existingCustomerToolStripMenuItem_Click);
+            // 
             // editAccountToolStripMenuItem
             // 
             this.editAccountToolStripMenuItem.Name = "editAccountToolStripMenuItem";
@@ -153,24 +167,11 @@
             this.viewTransactionsToolStripMenuItem.Text = "View Transactions";
             this.viewTransactionsToolStripMenuItem.Click += new System.EventHandler(this.viewTransactionsToolStripMenuItem_Click);
             // 
-            // newCustomerToolStripMenuItem
-            // 
-            this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.newCustomerToolStripMenuItem.Text = "New Customer";
-            this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click);
-            // 
-            // existingCustomerToolStripMenuItem
-            // 
-            this.existingCustomerToolStripMenuItem.Name = "existingCustomerToolStripMenuItem";
-            this.existingCustomerToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.existingCustomerToolStripMenuItem.Text = "Existing Customer";
-            this.existingCustomerToolStripMenuItem.Click += new System.EventHandler(this.existingCustomerToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(839, 374);
             this.Controls.Add(this.dgvAccountDisplay);
             this.Controls.Add(this.menuStrip1);
